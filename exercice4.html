@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <title>Exercice_4</title>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  <form>
+    <label for="lastname">Nom : </label><input type="text" name="lastname" id="lastname" onblur="veriftest"/>
+    <label for="firstname">Prénom : </label><input type="text" name="firstname" id="firstname" onblur="veriftest"/>
+    <label for="city">Ville : </label><input type="text" name="city" id="city"/>
+    <button  name="submit" id="submit" onclick="test();">Valider</button>
+
+  </form>
+  <script>
+
+    function test() {
+      var lastname = document.getElementById('lastname').value;
+      var firstname = document.getElementById('firstname').value;
+      var city = document.getElementById('city').value;
+
+      var regex = new RegExp('[a-zA-Z._-]');
+      if(regex.test(lastname) & regex.test(firstname) & regex.test(city))
+      {
+        alert('Nom : '+ lastname
+        +'\nPrénom : ' + firstname
+        +'\nVille : '+ city);
+      }
+      else
+      {
+        alert('C\'est faux !')
+      }
+    }
+  </script>
+</body>
+</html>
